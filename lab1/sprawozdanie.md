@@ -1,5 +1,5 @@
-https://github.com/prochotwik-pv/repozytorium
-https://github.com/prochotwik-pv/repozytorium/blob/main/lab1/sesje/transcript_full.jsonl
+https://github.com/prochotwik-pv/repozytorium  
+https://github.com/prochotwik-pv/repozytorium/blob/main/lab1/sesje/transcript_full.jsonl  
 Antigravity · Gemini 4 Argon · MEDIUM<br>  
 
 
@@ -11,6 +11,7 @@ wywoływanego polecenia i rzeczywisty wynik wykonania procesu i rezultat przygot
 
 2. Jak powstał raport? Wskaż wejście, polecenie, narzędzie, środowisko wykonania i wynik procesu. Dodaj  link do końcowego raportu i wyjaśnij jego liczebności.<br>  
 Wejście - plik data/exercise.csv komenda py -3 describe_data.py --data data/exercise.csv --out results/exercise-summary.json  
+Program: describe_data.py
 Narzędzie - narzędzie uruchamiającego proces powłoki z ominięciem piaskownicy (BypassSandbox: true);   
 Środowisko - skrypt przetworzony na lokalnym systemie Windows przez zainstalowany interpreter Python 3.15.1  
 Wynik  - pomyślne wykonannie skryptu (kod wyjścia 0) wypisanie krótkiego komunikatu w konsoli i wygenerowanie raportu końcowego  
@@ -24,12 +25,14 @@ Wyjaśnienie liczebności - 8 (total) parser potraktował każdy wieloliniowy e-
  Parser csv.DictReader odczytuje plik, grupując wieloliniowe wiadomości w cudzysłowach w pojedyncze rekordy. Następnie pętla sumuje wyłącznie wartości  
  pobrane z kolumny label, całkowicie ignorując treść maila.  
  Przykład zmienionego przypadku - plik z 4 wiadomościami spam celowo w polu text wiadomości zostało oznaczone jako ham. Etykiety w kolumnie label 2 x ham, 2 x spam
- Przewidywanie - program wskaże łącznie 4 wiadomości (2 spam ; 2 ham)  
- Sposób sprawdzenia - Weryfikacja krok po kroku w czacie – podałam swój wynik na podstawie analizy kodu, zanim agent ujawnił prawidłową odpowiedź.  
- Wniosek - Przewidywanie się potwierdziło i udowodniło, że skrypt zlicza tylko wyłącznie jawne etykiety z kolumny label i nie klasyfikuje tekstu na podstawie zawartych słów.  
+ Przewidywanie - Przykład z 4 wiadomościami - program wskaże łącznie 4 wiadomości (2 spam ; 2 ham)   
+                 Zmiana etykiety w zbiorze ćwiczeniowym - liczba ham zmniejszy się o 1, liczba spam zwiększy się o 1, a łączna liczba wiadomości pozostanie bez zmian - 8.
+ Sposób sprawdzenia - Weryfikacja krok po kroku w czacie – podałam swój wynik na podstawie analizy kodu, zanim agent ujawnił prawidłową odpowiedź. - przeanalizował działanie pętli,  
+uruchomił skrypt describe_data.py na zmodyfikowanym pliku csv i odczytał wygenerowany raport 
+ Wniosek - Przewidywanie się potwierdziło i udowodniło, że skrypt zlicza tylko wyłącznie jawne etykiety - wartości z kolumny label i nie klasyfikuje tekstu na podstawie  
+ zawartych słów oraz nie liczy fizycznych wierszy pliku.  
  
 4. Jak uruchomiono gotowy test, jaki był wynik i czego dotyczyło sprawdzenie?<br>  
-
 
 5. Jaką etykietę zmieniono w etapie 2? Jakiej zmiany liczebności oczekiwałeś, jakie operacje wybrałeś i dlaczego? Porównaj wynik przed zmianą i po nowym wykonaniu.<br>  
 

@@ -15,6 +15,7 @@ Narzędzie - narzędzie uruchamiającego proces powłoki z ominięciem piaskowni
 Środowisko - skrypt przetworzony na lokalnym systemie Windows przez zainstalowany interpreter Python 3.15.1  
 Wynik  - pomyślne wykonannie skryptu (kod wyjścia 0) wypisanie krótkiego komunikatu w konsoli i wygenerowanie raportu końcowego  
 Raport - https://github.com/prochotwik-pv/repozytorium/blob/main/lab1/project/results/exercise-summary.json   
+Raport powstał przez odczytanie danych CSV i zliczenie wiadomości według przypisanych im etykiet.
 Wyjaśnienie liczebności - 8 (total) parser potraktował każdy wieloliniowy e-mail jako pojedynczy rekord, nie gubiąc znaków na nowych liniach;  
  5(ham) i 3 (spam) < -- gotowe wartości z kolumny label dla każdego z 8 rekordów tzn maila, nie analizując ich treści
 3. Który fragment dokumentacji lub kodu wyjaśniłeś? Podaj plik i miejsce, własne wyjaśnienie oraz mały

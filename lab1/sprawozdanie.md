@@ -33,6 +33,11 @@ uruchomił skrypt describe_data.py na zmodyfikowanym pliku csv i odczytał wygen
  zawartych słów oraz nie liczy fizycznych wierszy pliku.  
  
 4. Jak uruchomiono gotowy test, jaki był wynik i czego dotyczyło sprawdzenie?<br>  
+By uruchomić test użyto komendy   
+py -3 -m unittest discover -s tests -v  
+Wynik - weryfikacja czy program główny wykonał się z powodzeniem --> Tak (wynik OK kod wyjścia 0)  
+Sprawdzenie dotyczyło tego czy program główny może zapisać wynik z dala od katalogu produkcyjnego  by nie zniszczyć końcowego pliku JSON zapisał oraz  
+czy są odczytywane sztucznie wpisane wartości dla ukrytego pliku messages.csv ( 3 wiadomości (2 ham, 1 spam) 
 
 5. Jaką etykietę zmieniono w etapie 2? Jakiej zmiany liczebności oczekiwałeś, jakie operacje wybrałeś i dlaczego? Porównaj wynik przed zmianą i po nowym wykonaniu.<br>  
 

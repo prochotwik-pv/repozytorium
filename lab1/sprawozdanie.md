@@ -15,12 +15,18 @@ Narzędzie - narzędzie uruchamiającego proces powłoki z ominięciem piaskowni
 Środowisko - skrypt przetworzony na lokalnym systemie Windows przez zainstalowany interpreter Python 3.15.1  
 Wynik  - pomyślne wykonannie skryptu (kod wyjścia 0) wypisanie krótkiego komunikatu w konsoli i wygenerowanie raportu końcowego  
 Raport - https://github.com/prochotwik-pv/repozytorium/blob/main/lab1/project/results/exercise-summary.json   
-Raport powstał przez odczytanie danych CSV i zliczenie wiadomości według przypisanych im etykiet.
+Raport powstał przez odczytanie danych CSV i zliczenie wiadomości według przypisanych im etykiet.  
 Wyjaśnienie liczebności - 8 (total) parser potraktował każdy wieloliniowy e-mail jako pojedynczy rekord, nie gubiąc znaków na nowych liniach;  
  5(ham) i 3 (spam) < -- gotowe wartości z kolumny label dla każdego z 8 rekordów tzn maila, nie analizując ich treści
 3. Który fragment dokumentacji lub kodu wyjaśniłeś? Podaj plik i miejsce, własne wyjaśnienie oraz mały
  przypadek: przewidywanie, sposób sprawdzenia i wniosek.<br>  
- 
+ Wybrałam plik describe_data.py (14-38), gdzie wczytywano csv i zliczano etykiety.  
+ Parser csv.DictReader odczytuje plik, grupując wieloliniowe wiadomości w cudzysłowach w pojedyncze rekordy. Następnie pętla sumuje wyłącznie wartości  
+ pobrane z kolumny label, całkowicie ignorując treść maila.  
+ Przykład zmienionego przypadku - plik z 4 wiadomościami spam celowo w polu text wiadomości zostało oznaczone jako ham. Etykiety w kolumnie label 2 x ham, 2 x spam
+ Przewidywanie - program wskaże łącznie 4 wiadomości (2 spam ; 2 ham)  
+ Sposób sprawdzenia - Weryfikacja krok po kroku w czacie – podałam swój wynik na podstawie analizy kodu, zanim agent ujawnił prawidłową odpowiedź.  
+ Wniosek - Przewidywanie się potwierdziło i udowodniło, że skrypt zlicza tylko wyłącznie jawne etykiety z kolumny label i nie klasyfikuje tekstu na podstawie zawartych słów.  
  
 4. Jak uruchomiono gotowy test, jaki był wynik i czego dotyczyło sprawdzenie?<br>  
 

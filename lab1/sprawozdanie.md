@@ -40,4 +40,19 @@ Sprawdzenie dotyczyło tego czy program główny może zapisać wynik z dala od 
 czy są odczytywane sztucznie wpisane wartości dla ukrytego pliku messages.csv ( 3 wiadomości (2 ham, 1 spam) 
 
 5. Jaką etykietę zmieniono w etapie 2? Jakiej zmiany liczebności oczekiwałeś, jakie operacje wybrałeś i dlaczego? Porównaj wynik przed zmianą i po nowym wykonaniu.<br>  
-
+W etapie 2 zmieniono etykietę ham o identyfikatorze wiadomości exercise-006 na etykietę spam.  
+Przewidywanie - ham 5-->4; spam 3-->4; razem 8 --> 8 (bez zmian)
+Wybrane operacje - zmienienie etykiety wiadomości z ham na spam w pliku data/exercise.csv 
+				   nie zmieniamy exercise-summary.json on powstaje w wyniku obliczeń programu, a nie jest źródłem danych wejściowych
+				   ponowne uruchomienie programu poleceniem py -3 describe_data.py - wygenerowało to i nadpisało raport  
+				   raport nie aktualizuje się automatycznie, gdy dane ulegają zmianie, dlatego należało go ponownie uruchomić 
+                   odczytanie wygenerowanego pliku results/exercise-summary.json  
+				   należało potwierdzić, że zapisny na dysku plik raportu rzeczywiście został zaktualizowany
+Porównanie wyników - liczba wiadomości ham spadła 5--> 4  
+					liczba wiadomości spam wzrosła 3-->4
+					łączna liczba wiadomości taka sama (8)
+					skrót input_sha256 zmienił się, ponieważ zmieniła się zawartość bajtowa pliku data/exercise.csv	
+					pola input_file oraz runtime pozostały bez zmian  
+Wniosek - wynik zgodny z przewidywaniem, liczebność ham i spam zmieniła się o 1 ponieważ jeden z 8 rekordów został przepisany z kategorii ham do kategorii spam,  
+ ale sama liczba rekordów w pliku csv nie uległa zmianie. Zmiana sumy kontrolnej input_sha256 dodatkowo potwierdza, że nowy raport został wygenerowany na podstawie  
+ zmodyfikowanego pliku wejściowego.
